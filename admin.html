@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin | Kalkan Private Villas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <a class="brand" href="index.html">KALKAN PRIVATE VILLAS</a>
+    <nav><a href="index.html">VIEW SITE</a></nav>
+  </header>
+
+  <main class="admin-shell">
+    <div class="admin-heading">
+      <p class="eyebrow">MANAGEMENT</p>
+      <h1>Villa Yönetim Paneli</h1>
+      <p>Bu ilk sürümde değişiklikler bu tarayıcıda saklanır. Canlı sitede Supabase veritabanına bağlanabilir.</p>
+    </div>
+
+    <form id="adminForm" class="admin-grid"></form>
+
+    <div class="admin-actions">
+      <button id="saveBtn" type="button" class="primary-btn">Değişiklikleri Kaydet</button>
+      <button id="resetBtn" type="button" class="secondary-btn">Varsayılana Dön</button>
+      <span id="saveStatus" class="save-status"></span>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
