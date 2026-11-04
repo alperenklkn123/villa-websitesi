@@ -1,33 +1,28 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#182a2b">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kalkan Private Villas</title>
-  <meta name="description" content="Villa Glass House ve Villa 02 — Kalkan Private Villas.">
+  <meta name="description" content="Two private villas in Kalkan, Turkey." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261104" />
 </head>
 <body class="home-page">
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Kalkan Private Villas ana sayfa"><span>KALKAN</span><span>PRIVATE VILLAS</span></a>
+    <a class="brand" href="index.html">KALKAN PRIVATE VILLAS</a>
   </header>
-  <main class="selector" aria-label="Villa seçimi">
-    <div id="villaGrid" class="villa-grid">
-      <a class="villa-card" href="villa.html?id=glass-house" data-id="glass-house">
-        <img class="villa-image" src="assets/glass-house.png" alt="" fetchpriority="high">
-        <div class="villa-caption"><h1 class="villa-name">VILLA GLASS HOUSE</h1><span class="villa-arrow" aria-hidden="true">↗</span></div>
-      </a>
-      <a class="villa-card" href="villa.html?id=villa-02" data-id="villa-02">
-        <img class="villa-image" src="assets/villa-02.png" alt="" fetchpriority="high">
-        <div class="villa-caption"><h2 class="villa-name">VILLA 02</h2><span class="villa-arrow" aria-hidden="true">↗</span></div>
-      </a>
-    </div>
+
+  <main>
+    <section class="selector" aria-label="Villa selection">
+      <div id="villaGrid" class="villa-grid"></div>
+    </section>
   </main>
+
   <div id="transitionLayer" class="transition-layer" aria-hidden="true"></div>
   <script src="app.js"></script>
 </body>
 </html>
+

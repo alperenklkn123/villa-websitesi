@@ -1,0 +1,80 @@
+/* Visual layer scoped to the management page. */
+.admin-page {
+  --ink: #302d27;
+  --muted: #746d61;
+  --accent: #91754f;
+  --line: #e4ddd2;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 5% 12%, #fffdf8 0%, transparent 55%),
+              radial-gradient(ellipse at 95% 65%, #e9dfce80 0%, transparent 55%), #f3efe7;
+}
+.admin-page .site-header {
+  height: 88px;
+  background: #faf7f0e6;
+  border-bottom: 1px solid #ded6c980;
+}
+.admin-page .brand { font-size: 23px; letter-spacing: .12em; }
+.admin-page nav a { opacity: 1; color: #675c4a; padding: 12px 0; border-bottom: 1px solid #b8a486; }
+.admin-page .admin-shell { max-width: 1240px; padding: 58px 5vw 72px; }
+.admin-page .admin-heading { margin-bottom: 34px; }
+.admin-page .eyebrow { color: #88704e; font-size: 10px; font-weight: 500; letter-spacing: .28em; }
+.admin-page .admin-heading h1 { font-size: clamp(38px, 4.6vw, 62px); line-height: 1.1; margin: 14px 0 18px; }
+.admin-page .admin-heading > p:last-child { font-size: 13px; max-width: 670px; line-height: 1.8; }
+.admin-page .admin-grid { gap: 24px; align-items: start; }
+.admin-page .admin-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 14px;
+  padding: 30px;
+  background: #ffffffdd;
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px #58462d08, 0 2px 5px #58462d04;
+}
+.admin-page .admin-card h2 { grid-column: 1 / -1; margin: 0 0 2px; padding-bottom: 20px; border-bottom: 1px solid #ebe5db; font-size: 34px; }
+.admin-page .field { margin: 0; min-width: 0; gap: 9px; }
+.admin-page .field:nth-of-type(1),
+.admin-page .field:nth-of-type(5),
+.admin-page .field:nth-of-type(6) { grid-column: 1 / -1; }
+.admin-page .field label { font-size: 11px; letter-spacing: .02em; color: #706659; line-height: 1.5; }
+.admin-page .field input, .admin-page .field textarea {
+  min-width: 0;
+  border: 1px solid #e4ddd2;
+  border-radius: 7px;
+  background: #fcfaf6;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 13px;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.admin-page .field input:hover, .admin-page .field textarea:hover { border-color: #c8bba7; }
+.admin-page .field input:focus, .admin-page .field textarea:focus { border-color: #9c825c; background: #fff; box-shadow: 0 0 0 3px #a68a5e20; }
+.admin-page .field textarea { min-height: 134px; }
+.admin-page .admin-actions { gap: 14px; margin-top: 26px; padding-top: 26px; border-top: 1px solid #ded6c9; }
+.admin-page .primary-btn, .admin-page .secondary-btn { min-height: 48px; border-radius: 7px; padding: 14px 23px; font-size: 12px; font-weight: 500; transition: background .18s ease, box-shadow .18s ease; }
+.admin-page .primary-btn { background: #514b3e; box-shadow: 0 4px 12px #514b3e16; }
+.admin-page .primary-btn:hover { background: #373329; }
+.admin-page .secondary-btn { border: 1px solid #cfc4b3; background: #ffffff50; color: #5b5142; }
+.admin-page .secondary-btn:hover { background: #fffaf2; }
+.admin-page button:focus-visible, .admin-page a:focus-visible { outline: 2px solid #91754f; outline-offset: 4px; }
+.admin-page .save-status { color: #526249; font-size: 12px; }
+@media (max-width: 820px) {
+  .admin-page .site-header { height: 78px; }
+  .admin-page .brand { font-size: 18px; letter-spacing: .07em; }
+  .admin-page .admin-shell { padding: 38px 22px 48px; max-width: 660px; }
+  .admin-page .admin-grid { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (max-width: 420px) {
+  .admin-page .site-header { padding: 0 18px; gap: 16px; }
+  .admin-page .brand { max-width: 190px; font-size: 17px; }
+  .admin-page nav { font-size: 9px; white-space: nowrap; }
+  .admin-page .admin-shell { padding-inline: 16px; }
+  .admin-page .admin-card { padding: 23px 18px; gap: 19px 9px; }
+  .admin-page .field input { padding-inline: 10px; }
+  .admin-page .field input, .admin-page .field textarea { font-size: 16px; }
+  .admin-page .field label { font-size: 10px; }
+  .admin-page .admin-actions { align-items: stretch; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-page *, .admin-page *::before, .admin-page *::after { transition: none !important; }
+}

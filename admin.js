@@ -49,3 +49,4 @@ document.getElementById("resetBtn").addEventListener("click", () => {
   render();
   document.getElementById("saveStatus").textContent = "Varsayılan değerlere dönüldü.";
 });
+
