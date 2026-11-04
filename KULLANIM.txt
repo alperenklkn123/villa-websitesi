@@ -1,0 +1,9 @@
+KALKAN PRIVATE VILLAS — PREMIUM TASARIM
+
+ZIP içindeki HTML, CSS, JS dosyalarını ve assets klasörünü GitHub deponuzun ana klasörüne birlikte yükleyin.
+
+Görseller tasarımı göstermek için yapay zekâyla üretilmiş örnek villalardır; gerçek mülk fotoğrafları değildir. Kendi fotoğraflarınızla assets/glass-house.png ve assets/villa-02.png dosyalarını değiştirin.
+
+Admin paneli admin.html adresinde durur. Mevcut yönetim sistemi değişiklikleri yalnızca kullandığınız tarayıcıda saklar.
+
+Görsel üretim: Yerleşik Imagegen. Glass House tarifi: Akdeniz manzaralı cam cepheli çağdaş villa, sonsuzluk havuzu, doğal taş, zeytin ağacı, sıcak akşamüstü ışığı. Villa 02 tarifi: Akdeniz manzaralı kemerli taş villa, havuz, zeytin dalları, aynı sıcak editoryal fotoğraf dili.
