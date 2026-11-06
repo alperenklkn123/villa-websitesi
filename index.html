@@ -1,1 +1,30 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kalkan Private Villas</title><meta name="description" content="Private luxury villas in Kalkan, Turkey."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body class="home"><header class="home-brand">KALKAN PRIVATE VILLAS</header><main class="selector"><div id="villaGrid" class="villa-grid"></div></main><div id="transitionLayer" class="transition-layer"></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f0e8">
+  <title>Kalkan Private Villas</title>
+  <meta name="description" content="Discover Villa Glass House and Villa 02, two private villas in Kalkan, Turkey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body class="home">
+  <header class="home-brand">KALKAN PRIVATE VILLAS</header>
+  <main class="selector" aria-label="Choose a villa">
+    <div id="villaGrid" class="villa-grid">
+      <!-- Working fallback even if app.js fails to load. -->
+      <a class="villa-card" href="villa.html?id=glass-house" data-id="glass-house" style="--img:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88')" aria-label="Explore Villa Glass House">
+        <span>VILLA GLASS HOUSE</span>
+      </a>
+      <a class="villa-card" href="villa.html?id=villa-02" data-id="villa-02" style="--img:url('https://images.unsplash.com/photo-1600607688960-e095ff83135c?auto=format&fit=crop&w=1800&q=88')" aria-label="Explore Villa 02">
+        <span>VILLA 02</span>
+      </a>
+    </div>
+  </main>
+  <div id="transitionLayer" class="transition-layer" aria-hidden="true"></div>
+  <script src="app.js?v=5" defer></script>
+</body>
+</html>
