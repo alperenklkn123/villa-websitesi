@@ -41,8 +41,8 @@
         return a.control;
       };
       input('Villa adı','name');
-      const photo=field('Fotoğraf bağlantıları — her satırda bir HTTPS adresi','textarea',(villa.photos||[]).join('\n'));
-      photo.control.rows=5;block.append(photo.el);photo.control.addEventListener('input',()=>villa.photos=photo.control.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean));
+      const photo=field('Fotoğraf bağlantıları — her satırda bir HTTPS adresi veya assets/ dosya yolu','textarea',(villa.photos||[]).join('\n'));
+      photo.control.rows=5;block.append(photo.el);photo.control.addEventListener('input',()=>{const previous=villa.photos?.[0];villa.photos=photo.control.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(villa.photos[0]!==previous){villa.cover=villa.photos[0]||'';delete villa.coverSmall;}});
       const sampleLabel=document.createElement('label');sampleLabel.className='admin-check';const sample=document.createElement('input');sample.type='checkbox';sample.checked=!!villa.photosAreSamples;
       sample.addEventListener('change',()=>villa.photosAreSamples=sample.checked);
       sampleLabel.append(sample,document.createTextNode('Bu fotoğraflar örnek, gerçek villa fotoğrafları değil'));block.append(sampleLabel);
@@ -81,7 +81,7 @@
     if(!data || !Array.isArray(data.villas) || data.villas.length !== 2 || data.villas[0].id!=='glass-house'||data.villas[1].id!=='glass-house-mini')throw Error('İki villa kaydı gerekli: glass-house ve glass-house-mini.');
     for(const v of data.villas) {
       if(!v.name?.trim())throw Error('Villa adı boş olamaz.');
-      if(!Array.isArray(v.photos)||v.photos.some(x=>!/^https:\/\//i.test(x)))throw Error('Fotoğraf bağlantıları HTTPS ile başlamalı.');
+      if(!Array.isArray(v.photos)||v.photos.some(x=>!(/^https:\/\//i.test(x) || /^assets\/[a-zA-Z0-9_./-]+$/.test(x) && !x.split('/').includes('..'))))throw Error('Fotoğraflar HTTPS adresi veya assets/ ile başlayan güvenli dosya yolu olmalı.');
     }
   }
   function getData(){readGlobals();validate(draft);return draft;}
@@ -103,3 +103,4 @@
   form.addEventListener('submit',e=>e.preventDefault());
   fetch('../villas.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).then(data=>{validate(data);liveData=data;try{const saved=JSON.parse(localStorage.getItem(key));if(saved){validate(saved);draft=saved;}else draft=copy(data);}catch{draft=copy(data);}render();}).catch(err=>showStatus('Canlı villas.json yüklenemedi: '+err.message+'. Sayfayı GitHub Pages URL’sinden açtığından emin ol.'));
 })();
+

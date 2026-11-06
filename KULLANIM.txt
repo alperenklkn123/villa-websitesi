@@ -7,3 +7,4 @@ Görseller tasarımı göstermek için yapay zekâyla üretilmiş örnek villala
 Admin paneli admin.html adresinde durur. Mevcut yönetim sistemi değişiklikleri yalnızca kullandığınız tarayıcıda saklar.
 
 Görsel üretim: Yerleşik Imagegen. Glass House tarifi: Akdeniz manzaralı cam cepheli çağdaş villa, sonsuzluk havuzu, doğal taş, zeytin ağacı, sıcak akşamüstü ışığı. Villa 02 tarifi: Akdeniz manzaralı kemerli taş villa, havuz, zeytin dalları, aynı sıcak editoryal fotoğraf dili.
+

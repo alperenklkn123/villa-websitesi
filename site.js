@@ -9,7 +9,9 @@
     tr: {sample:'Görseller örnektir; gerçek villanın fotoğrafları değildir.', photoAlt:'Örnek villa fotoğrafı', realAlt:'Fotoğraf:', guest:'Misafir', bedroom:'Yatak odası', bathroom:'Banyo', confirm:'Ev sahibi onaylayana kadar tarihler rezerve edilmiş sayılmaz.', ready:'Tarihleriniz için WhatsApp veya e-posta üzerinden talep gönderin.', unavailable:'Henüz iletişim numarası veya e-posta tanımlanmadı.', dateError:'Çıkış tarihi giriş tarihinden sonra olmalıdır.', name:'İsim', checkin:'Giriş', checkout:'Çıkış', guests:'Misafir', message:'Mesaj', noAmenities:'Doğrulanmış özellikler yakında eklenecek.', location:'Kesin konum ve mesafeler doğrulandıktan sonra eklenecek.', opt:'Güncel fiyat için iletişime geçin.', noPhoto:'Fotoğraflar yakında eklenecek.'}
   }[language];
   const root = language === 'en' ? './' : '../';
-  const validURL = s => typeof s === 'string' && /^https:\/\//i.test(s) ? s : '';
+  const validURL = s => typeof s === 'string' && (/^https:\/\//i.test(s) || /^assets\/[a-zA-Z0-9_./-]+$/.test(s) && !s.split('/').includes('..')) ? s : '';
+  const photoURL = s => validURL(s) ? (s.startsWith('assets/') ? root + s : s) : '';
+  const photoAlt = (villa, src) => villa.photosAreSamples ? text.photoAlt : lvalue(villa.photoDetails?.[src]?.alt, `${text.realAlt} ${villa.name}`);
   const setText = (el, value) => { if (el && value !== undefined && value !== null) el.textContent = String(value); };
   const all = (sel, node=document) => Array.from(node.querySelectorAll(sel));
   const lvalue = (v, fallback='') => (typeof v === 'string' ? v : (v && typeof v === 'object' ? (v[language] || v.en || fallback) : fallback));
@@ -35,10 +37,10 @@
       if (!villa) return;
       setText(card.querySelector('.card-title'), villa.name);
       card.setAttribute('aria-label', villa.name);
-      const src = validURL(villa.photos?.[0]);
+      const src = photoURL(villa.cover || villa.photos?.[0]);
       const img = card.querySelector('img');
-      if (img && src) img.src = src;
-      if (img) img.alt = villa.photosAreSamples ? text.photoAlt : `${text.realAlt} ${villa.name}`;
+      if (img && src) { img.src = src; img.removeAttribute('srcset'); if(villa.coverSmall) { img.srcset=`${photoURL(villa.coverSmall)} 480w, ${src} 960w`; img.sizes='(max-width: 700px) 90vw, 45vw'; } }
+      if (img) img.alt = photoAlt(villa, villa.photos?.[0]);
     });
   };
 
@@ -47,8 +49,8 @@
     if (!villa) return;
     setText(document.querySelector('[data-name]'), villa.name);
     const hero = document.querySelector('[data-hero] img');
-    const heroImg = validURL(villa.photos?.[0]);
-    if (hero && heroImg) { hero.src = heroImg; hero.alt = villa.photosAreSamples ? text.photoAlt : `${text.realAlt} ${villa.name}`; }
+    const heroImg = photoURL(villa.photos?.[0]);
+    if (hero && heroImg) { hero.src = heroImg; hero.alt = photoAlt(villa,villa.photos?.[0]); }
     setText(document.querySelector('[data-description]'), lvalue(villa.description, lvalue(villa.summary)));
     setText(document.querySelector('[data-price]'), lvalue(villa.priceNote, text.opt));
     const sampleTag = document.querySelector('.sample-tag');
@@ -69,10 +71,12 @@
     if (gallery) {
       gallery.replaceChildren();
       photos.forEach((url, i) => {
-        const button = document.createElement('button'); button.type='button'; button.className='gallery-tile'; button.setAttribute('aria-label', `Photo ${i+1}`);
-        const img = document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=url; img.alt = villa.photosAreSamples ? text.photoAlt : `${text.realAlt} ${villa.name} ${i+1}`;
+        const detail=villa.photoDetails?.[url];
+        const button = document.createElement('button'); button.type='button'; button.className='gallery-tile'; button.setAttribute('aria-label', photoAlt(villa,url));
+        const img = document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=photoURL(detail?.thumb || url); img.alt=photoAlt(villa,url);
+        if(detail) { img.width=detail.width; img.height=detail.height; img.srcset=`${photoURL(detail.thumb)} 640w, ${photoURL(url)} ${detail.width}w`; img.sizes=i===0?'(max-width: 700px) 90vw, 65vw':'(max-width: 700px) 45vw, 30vw'; }
         button.append(img); gallery.append(button);
-        button.addEventListener('click', () => showLightbox(url, img.alt));
+        button.addEventListener('click', () => showLightbox(photoURL(url), img.alt,button));
       });
       if (!photos.length) setText(gallery, text.noPhoto);
     }
@@ -108,19 +112,21 @@
     const close=lightbox?.querySelector('.close-lightbox');
     close?.addEventListener('click', hideLightbox);
     lightbox?.addEventListener('click', e => { if(e.target === lightbox) hideLightbox(); });
-    document.addEventListener('keydown', e => {if (e.key==='Escape') hideLightbox();});
+    document.addEventListener('keydown', e => {if (e.key==='Escape') hideLightbox(); if(e.key==='Tab' && lightbox && !lightbox.hidden) {e.preventDefault();close?.focus();}});
 
     // Omit claims such as star ratings, license numbers, prices and availability if not confirmed.
     // VacationRental structured data is intentionally not published with sample photos and unknown property details.
   };
-  function showLightbox(url, alt) {
+  let lightboxTrigger=null;
+  function showLightbox(url, alt,trigger) {
+    lightboxTrigger=trigger;
     const box=document.getElementById('lightbox'); if(!box)return;
     const img=box.querySelector('img'); img.src=url; img.alt=alt; box.hidden=false;
     document.body.style.overflow='hidden'; box.querySelector('.close-lightbox')?.focus();
   }
   function hideLightbox() {
     const box=document.getElementById('lightbox'); if(!box || box.hidden)return;
-    box.hidden=true; document.body.style.overflow='';
+    box.hidden=true; document.body.style.overflow=''; lightboxTrigger?.focus();
   }
   function setupBooking(form,villa,data) {
     const whatsapp=String(data.whatsapp||'').replace(/\D/g,'');
@@ -154,3 +160,4 @@
     .then(data=>{if (!data || !Array.isArray(data.villas))return; if(body.dataset.page==='home')renderHome(data);else if(body.dataset.page==='villa')renderDetail(data);})
     .catch(e=>{console.warn('Using static fallback:', e.message);});
 })();
+

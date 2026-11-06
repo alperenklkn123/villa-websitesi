@@ -54,3 +54,4 @@ Ana sayfa sadece iki kare seçim kartı gösterir. Villa sayfalarında hero, gal
 ## Teknik
 
 Sadece HTML + CSS + JS + `villas.json`. Ana sayfadaki villa kartları HTML'de hazırdır: JS yüklenmezse bile iki seçim görünür. JS, `villas.json` üzerinden içerikleri günceller. Statik dosyalar GitHub Pages ile uyumludur. `admin.html` eski bağlantılar için `/admin/` sayfasına yönlendirir. Form verileri bu sitede sunucuya kaydedilmez.
+

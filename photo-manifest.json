@@ -1,0 +1,302 @@
+[
+  {
+    "src": "assets/glass-house-real/pool-villa.webp",
+    "thumb": "assets/glass-house-real/pool-villa-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Havuz ve villanın gündüz dış görünümü",
+      "en": "Villa Glass House — Daytime view of the pool and villa",
+      "de": "Villa Glass House — Pool und Villa bei Tageslicht"
+    },
+    "source": "41.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/evening-villa.webp",
+    "thumb": "assets/glass-house-real/evening-villa-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Akşam aydınlatmasıyla villa ve havuz",
+      "en": "Villa Glass House — Illuminated villa and pool at dusk",
+      "de": "Villa Glass House — Beleuchtete Villa mit Pool am Abend"
+    },
+    "source": "67.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/aerial.webp",
+    "thumb": "assets/glass-house-real/aerial-thumb.webp",
+    "width": 1920,
+    "height": 1080,
+    "alt": {
+      "tr": "Villa Glass House — Villa, bahçe ve havuzun havadan görünümü",
+      "en": "Villa Glass House — Aerial view of the villa, garden and pool",
+      "de": "Villa Glass House — Luftaufnahme von Villa, Garten und Pool"
+    },
+    "source": "Drone-1.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/pool.webp",
+    "thumb": "assets/glass-house-real/pool-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Villa önündeki açık havuz",
+      "en": "Villa Glass House — Outdoor pool in front of the villa",
+      "de": "Villa Glass House — Außenpool vor der Villa"
+    },
+    "source": "40.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/sunken-seating.webp",
+    "thumb": "assets/glass-house-real/sunken-seating-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Havuz kenarındaki oturma alanı ve dağ manzarası",
+      "en": "Villa Glass House — Poolside seating area and mountain views",
+      "de": "Villa Glass House — Sitzbereich am Pool mit Bergblick"
+    },
+    "source": "35.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/loungers.webp",
+    "thumb": "assets/glass-house-real/loungers-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Havuz içindeki şezlonglar ve güneşlenme alanı",
+      "en": "Villa Glass House — Sun loungers and poolside terrace",
+      "de": "Villa Glass House — Sonnenliegen und Terrasse am Pool"
+    },
+    "source": "34.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/cabana-view.webp",
+    "thumb": "assets/glass-house-real/cabana-view-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Gölgeli dinlenme alanından havuz ve villa",
+      "en": "Villa Glass House — Pool and villa seen from the shaded cabana",
+      "de": "Villa Glass House — Blick vom schattigen Ruhebereich auf Pool und Villa"
+    },
+    "source": "32.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/garden-swing.webp",
+    "thumb": "assets/glass-house-real/garden-swing-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Bahçedeki salıncak ve trambolin",
+      "en": "Villa Glass House — Garden swing and trampoline",
+      "de": "Villa Glass House — Gartenschaukel und Trampolin"
+    },
+    "source": "31.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/garden.webp",
+    "thumb": "assets/glass-house-real/garden-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Bahçe ve çevredeki dağların görünümü",
+      "en": "Villa Glass House — Garden and surrounding mountain views",
+      "de": "Villa Glass House — Garten mit Blick auf die umliegenden Berge"
+    },
+    "source": "29.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/outdoor-dining.webp",
+    "thumb": "assets/glass-house-real/outdoor-dining-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Üstü kapalı açık yemek alanı ve langırt",
+      "en": "Villa Glass House — Covered outdoor dining area and table football",
+      "de": "Villa Glass House — Überdachter Essbereich im Freien und Tischfußball"
+    },
+    "source": "43.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/barbecue.webp",
+    "thumb": "assets/glass-house-real/barbecue-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Havuz kenarındaki taş barbekü ve yemek alanı",
+      "en": "Villa Glass House — Stone barbecue and dining area beside the pool",
+      "de": "Villa Glass House — Steingrill und Essbereich am Pool"
+    },
+    "source": "37.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/living-stairs.webp",
+    "thumb": "assets/glass-house-real/living-stairs-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Yüksek tavanlı salon ve ahşap merdiven",
+      "en": "Villa Glass House — Double-height living room and wooden staircase",
+      "de": "Villa Glass House — Wohnzimmer mit hoher Decke und Holztreppe"
+    },
+    "source": "1.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/living-room.webp",
+    "thumb": "assets/glass-house-real/living-room-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Turuncu koltuklu salon ve televizyon",
+      "en": "Villa Glass House — Living room with orange sofa and television",
+      "de": "Villa Glass House — Wohnzimmer mit orangefarbenem Sofa und Fernseher"
+    },
+    "source": "18.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/dining-room.webp",
+    "thumb": "assets/glass-house-real/dining-room-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Salonla birleşen iç yemek alanı",
+      "en": "Villa Glass House — Indoor dining area beside the living room",
+      "de": "Villa Glass House — Essbereich neben dem Wohnzimmer"
+    },
+    "source": "22.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/kitchen.webp",
+    "thumb": "assets/glass-house-real/kitchen-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Mutfak dolapları ve yemek masası",
+      "en": "Villa Glass House — Kitchen cabinetry and dining table",
+      "de": "Villa Glass House — Küchenschränke und Esstisch"
+    },
+    "source": "55.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/double-bedroom.webp",
+    "thumb": "assets/glass-house-real/double-bedroom-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Pembe tekstilli çift kişilik yatak odası",
+      "en": "Villa Glass House — Double bedroom with pink textiles",
+      "de": "Villa Glass House — Doppelzimmer mit pinkfarbenen Textilien"
+    },
+    "source": "4.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/bedroom-view.webp",
+    "thumb": "assets/glass-house-real/bedroom-view-thumb.webp",
+    "width": 1920,
+    "height": 1278,
+    "alt": {
+      "tr": "Villa Glass House — Yatak odasındaki küvet ve dağ manzarası",
+      "en": "Villa Glass House — Bedroom bathtub and mountain views",
+      "de": "Villa Glass House — Badewanne im Schlafzimmer mit Bergblick"
+    },
+    "source": "5.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/bathroom.webp",
+    "thumb": "assets/glass-house-real/bathroom-thumb.webp",
+    "width": 1920,
+    "height": 1282,
+    "alt": {
+      "tr": "Villa Glass House — Mermer desenli duş alanı ve lavabo",
+      "en": "Villa Glass House — Marble-patterned shower area and washbasin",
+      "de": "Villa Glass House — Duschbereich in Marmoroptik und Waschbecken"
+    },
+    "source": "6.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/twin-bedroom.webp",
+    "thumb": "assets/glass-house-real/twin-bedroom-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Mavi tekstilli iki tek yataklı oda",
+      "en": "Villa Glass House — Twin bedroom with blue textiles",
+      "de": "Villa Glass House — Zweibettzimmer mit blauen Textilien"
+    },
+    "source": "8.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/twin-view.webp",
+    "thumb": "assets/glass-house-real/twin-view-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — İki tek yataklı odadan dağ manzarası",
+      "en": "Villa Glass House — Mountain view from the twin bedroom",
+      "de": "Villa Glass House — Bergblick aus dem Zweibettzimmer"
+    },
+    "source": "9.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/bedroom-evening.webp",
+    "thumb": "assets/glass-house-real/bedroom-evening-thumb.webp",
+    "width": 1920,
+    "height": 1281,
+    "alt": {
+      "tr": "Villa Glass House — Yatak odası ve küvetin akşam aydınlatması",
+      "en": "Villa Glass House — Bedroom and bathtub with evening lighting",
+      "de": "Villa Glass House — Schlafzimmer und Badewanne bei Abendbeleuchtung"
+    },
+    "source": "47.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/living-evening.webp",
+    "thumb": "assets/glass-house-real/living-evening-thumb.webp",
+    "width": 1920,
+    "height": 1282,
+    "alt": {
+      "tr": "Villa Glass House — Salonun sıcak akşam aydınlatması",
+      "en": "Villa Glass House — Living room with warm evening lighting",
+      "de": "Villa Glass House — Wohnzimmer mit warmer Abendbeleuchtung"
+    },
+    "source": "46.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/pool-evening.webp",
+    "thumb": "assets/glass-house-real/pool-evening-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Akşam villa cephesi ve havuz terası",
+      "en": "Villa Glass House — Villa facade and pool terrace at dusk",
+      "de": "Villa Glass House — Villafassade und Poolterrasse am Abend"
+    },
+    "source": "62.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/terrace-evening.webp",
+    "thumb": "assets/glass-house-real/terrace-evening-thumb.webp",
+    "width": 1920,
+    "height": 1280,
+    "alt": {
+      "tr": "Villa Glass House — Akşam şezlonglar ve üstü kapalı teras",
+      "en": "Villa Glass House — Sun loungers and covered terrace at dusk",
+      "de": "Villa Glass House — Sonnenliegen und überdachte Terrasse am Abend"
+    },
+    "source": "65.jpg"
+  },
+  {
+    "src": "assets/glass-house-real/night-view.webp",
+    "thumb": "assets/glass-house-real/night-view-thumb.webp",
+    "width": 1920,
+    "height": 1279,
+    "alt": {
+      "tr": "Villa Glass House — Gece havuz ve çevrenin manzarası",
+      "en": "Villa Glass House — Pool and surrounding views at night",
+      "de": "Villa Glass House — Pool und Umgebung bei Nacht"
+    },
+    "source": "68.jpg"
+  }
+]

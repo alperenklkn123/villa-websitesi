@@ -19,3 +19,9 @@
 .admin-global { margin-top:25px; }
 .admin-actions button { cursor:pointer; }
 .admin-actions button:focus-visible,.villa-card:focus-visible { outline:3px solid #987748; outline-offset:5px; }
+
+
+/* Additional gallery rows retain the existing layout and animations. */
+.gallery-grid{grid-auto-rows:260px}
+@media(max-width:700px){.gallery-grid{grid-auto-rows:180px}}
+.lightbox:not([hidden]){padding:50px 20px}.lightbox img{max-width:100%;max-height:calc(100svh - 100px);width:auto;height:auto}
