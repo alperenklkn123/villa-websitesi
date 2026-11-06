@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=../admin.html">
-  <title>Yönetim Paneli | Kalkan Private Villas</title>
-  <script>window.location.replace('../admin.html' + window.location.search + window.location.hash);</script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f4f0e8">
+  <title>İçerik Düzenleyici | Kalkan Private Villas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=7"><script src="../admin.js?v=7" defer></script>
 </head>
-<body>
-  <p><a href="../admin.html">Yönetim panelini aç</a></p>
-</body>
-</html>
+<body class="admin-page" data-page="admin">
+<main class="admin-shell">
+  <header class="admin-top"><a class="brand" href="../index.html">KALKAN PRIVATE VILLAS</a><a href="../index.html">← Siteye dön</a></header>
+  <p class="eyebrow">CONTENT STUDIO</p><h1>Villa Yönetim Paneli</h1>
+  <p class="admin-lead">İki villanın bilgilerini, fotoğraflarını ve rezervasyon iletişim bilgilerini buradan düzenle. Sitede herkese yayınlamak için yeni <strong>villas.json</strong> dosyasını indirip GitHub'daki aynı dosyayla değiştirmen gerekir.</p>
+  <div class="admin-warning"><strong>Önemli:</strong> Bu panel herkese açık, yalnızca tarayıcıda çalışan bir içerik düzenleyicisidir; sunucuya kaydetmez ve şifreli yönetim paneli değildir. Buraya özel şifre, kimlik belgesi ya da gizli anahtar ekleme. İndirdiğin <code>villas.json</code> herkese açık olacaktır.</div>
+  <div id="adminStatus" class="admin-help" role="status">Canlı villa bilgileri yükleniyor…</div>
+  <form id="editor" autocomplete="off" hidden>
+    <section class="admin-global">
+      <p class="eyebrow">GENERAL SETTINGS</p><h2>Site ve rezervasyon</h2>
+      <label>Site / marka adı<input name="brand" maxlength="100" required></label>
+      <label>WhatsApp numarası (ülke koduyla, ör. 905XXXXXXXXX)<input name="whatsapp" inputmode="tel" placeholder="905XXXXXXXXX"></label>
+      <label>Rezervasyon e-postası<input name="email" type="email" placeholder="bookings@example.com"></label>
+      <p class="admin-help">WhatsApp veya e-posta boşsa ziyaretçilerin rezervasyon gönderme butonu kapalı kalır. Otomatik ödeme veya kesin müsaitlik onayı yoktur.</p>
+    </section>
+    <div id="villaEditors" class="admin-grid"></div>
+    <div class="admin-actions"><button type="button" id="download">villas.json indir</button><button class="secondary" type="button" id="saveDraft">Taslağı tarayıcıya kaydet</button><button class="secondary" type="button" id="reset">Yayındaki veriyi geri yükle</button><button class="secondary" type="button" id="importTrigger">JSON dosyası içe aktar</button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+    <p class="admin-help">Yayınlama: <b>villas.json indir</b> → GitHub'da <b>alperenklkn123/villa-websitesi</b> deposunu aç → kök dizindeki <b>villas.json</b> dosyasını bu yeni dosyayla değiştir → <b>Commit changes</b>. GitHub Pages dağıtımı bitince değişiklikler tüm ziyaretçilerde görünür.</p>
+  </form>
+</main>
+</body></html>

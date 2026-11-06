@@ -1,0 +1,79 @@
+{
+  "brand": "Kalkan Private Villas",
+  "whatsapp": "",
+  "email": "",
+  "villas": [
+    {
+      "id": "glass-house",
+      "slug": "villa-glass-house",
+      "name": "Villa Glass House",
+      "photos": [
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=82",
+        "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=82",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=82"
+      ],
+      "photosAreSamples": true,
+      "summary": {
+        "en": "An independent villa stay in Kalkan, on the Turkish Mediterranean coast.",
+        "de": "Ein privater Villenaufenthalt in Kalkan an der türkischen Mittelmeerküste.",
+        "tr": "Türkiye’nin Akdeniz kıyısındaki Kalkan’da özel bir villa konaklaması."
+      },
+      "description": {
+        "en": "Discover Villa Glass House in Kalkan. Explore the property gallery, review the information about the stay, and contact the host directly to discuss travel dates and current rates. Full property specifications and original photography will be added after verification.",
+        "de": "Entdecken Sie die Villa Glass House in Kalkan. Sehen Sie sich die Galerie an und kontaktieren Sie den Gastgeber direkt, um Reisedaten und aktuelle Preise zu besprechen. Bestätigte Ausstattungsdetails und Originalfotos werden ergänzt.",
+        "tr": "Kalkan’daki Villa Glass House’u keşfedin. Galeriyi inceleyin, konaklama bilgilerine göz atın ve tarih ile güncel fiyatlar için ev sahibiyle doğrudan iletişime geçin. Doğrulanmış özellikler ve gerçek fotoğraflar eklenecektir."
+      },
+      "guests": null,
+      "bedrooms": null,
+      "bathrooms": null,
+      "amenities": [],
+      "distanceNotes": {},
+      "priceNote": {
+        "en": "Ask for current rates.",
+        "de": "Aktuelle Preise auf Anfrage.",
+        "tr": "Güncel fiyat için iletişime geçin."
+      },
+      "latitude": null,
+      "longitude": null,
+      "address": "",
+      "registrationNumber": ""
+    },
+    {
+      "id": "glass-house-mini",
+      "slug": "villa-glass-house-mini",
+      "name": "Villa Glass House Mini",
+      "photos": [
+        "https://images.unsplash.com/photo-1600607688960-e095ff83135c?auto=format&fit=crop&w=1800&q=85",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=82",
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=82",
+        "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1200&q=82"
+      ],
+      "photosAreSamples": true,
+      "summary": {
+        "en": "Explore Villa Glass House Mini, the second private villa in our Kalkan collection.",
+        "de": "Entdecken Sie die Villa Glass House Mini, unsere zweite Villa in Kalkan.",
+        "tr": "Kalkan’daki ikinci villamız Villa Glass House Mini’yi keşfedin."
+      },
+      "description": {
+        "en": "Villa Glass House Mini is the second property in our Kalkan collection. View the gallery, learn about the location and request details directly. Photos and property specifications displayed during preparation are placeholders until confirmed.",
+        "de": "Die Villa Glass House Mini ist die zweite Unterkunft unserer Kalkan-Kollektion. Entdecken Sie die Galerie und fragen Sie direkt nach verfügbaren Terminen. Fotos und Objektangaben werden nach Bestätigung vervollständigt.",
+        "tr": "Villa Glass House Mini, Kalkan koleksiyonumuzdaki ikinci konaklama yeridir. Galeriyi inceleyebilir ve müsaitlik bilgilerini doğrudan sorabilirsiniz. Fotoğraflar ve villa özellikleri doğrulandığında güncellenecektir."
+      },
+      "guests": null,
+      "bedrooms": null,
+      "bathrooms": null,
+      "amenities": [],
+      "distanceNotes": {},
+      "priceNote": {
+        "en": "Ask for current rates.",
+        "de": "Aktuelle Preise auf Anfrage.",
+        "tr": "Güncel fiyat için iletişime geçin."
+      },
+      "latitude": null,
+      "longitude": null,
+      "address": "",
+      "registrationNumber": ""
+    }
+  ]
+}

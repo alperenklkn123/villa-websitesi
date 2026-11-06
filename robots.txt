@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /villa-websitesi/admin/
+Disallow: /villa-websitesi/admin.html
+Sitemap: https://alperenklkn123.github.io/villa-websitesi/sitemap.xml
