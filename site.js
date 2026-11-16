@@ -40,7 +40,7 @@
       const src = photoURL(villa.cover || villa.photos?.[0]);
       const img = card.querySelector('img');
       if (img && src) { img.src = src; img.removeAttribute('srcset'); if(villa.coverSmall) { img.srcset=`${photoURL(villa.coverSmall)} 480w, ${src} 960w`; img.sizes='(max-width: 700px) 90vw, 45vw'; } }
-      if (img) img.alt = photoAlt(villa, villa.photos?.[0]);
+      if (img) img.alt = villa.comingSoon && villa.previewImage ? lvalue(villa.previewAlt, villa.name) : photoAlt(villa, villa.photos?.[0]);
     });
   };
 
@@ -49,13 +49,13 @@
     if (!villa) return;
     setText(document.querySelector('[data-name]'), villa.name);
     const hero = document.querySelector('[data-hero] img');
-    const heroImg = photoURL(villa.photos?.[0]);
-    if (hero && heroImg) { hero.src = heroImg; hero.alt = photoAlt(villa,villa.photos?.[0]); }
+    const heroImg = photoURL(villa.comingSoon && villa.previewImage ? villa.previewImage : villa.photos?.[0]);
+    if (hero && heroImg) { hero.src = heroImg; hero.alt = villa.comingSoon && villa.previewImage ? lvalue(villa.previewAlt, villa.name) : photoAlt(villa,villa.photos?.[0]); }
     setText(document.querySelector('[data-description]'), lvalue(villa.description, lvalue(villa.summary)));
     setText(document.querySelector('[data-price]'), lvalue(villa.priceNote, text.opt));
     const sampleTag = document.querySelector('.sample-tag');
     const photoNote = document.querySelector('[data-photo-note]');
-    if (sampleTag) sampleTag.hidden = !villa.photosAreSamples;
+    if (sampleTag) sampleTag.hidden = !!villa.comingSoon || !villa.photosAreSamples;
     if (photoNote) { photoNote.hidden = !villa.photosAreSamples; if (villa.photosAreSamples) setText(photoNote, text.sample); }
     const validFacts = [ ['guests',villa.guests], ['bedrooms',villa.bedrooms], ['bathrooms',villa.bathrooms] ];
     const factsBar = document.getElementById('facts');
