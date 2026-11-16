@@ -127,9 +127,10 @@
       amenities.replaceChildren();
       (Array.isArray(villa.amenitiesByLanguage?.[language]) ? villa.amenitiesByLanguage[language] : (Array.isArray(villa.amenities) ? villa.amenities : [])).forEach(a => {
         if (typeof a !== 'string' || !a.trim()) return;
-        const div = document.createElement('div'); div.className='amenity-item';
-        const icon = document.createElement('span'); icon.textContent='✓'; icon.setAttribute('aria-hidden','true');
-        div.append(icon, document.createTextNode(a)); amenities.append(div);
+        const div = document.createElement('div'); div.className='amenity-item'; div.setAttribute('role','listitem');
+        const icon = document.createElement('span'); icon.className='amenity-mark'; icon.textContent='✓'; icon.setAttribute('aria-hidden','true');
+        const label = document.createElement('span'); label.className='amenity-copy'; label.textContent = a;
+        div.append(icon, label); amenities.append(div);
       });
       if (!amenities.childNodes.length) { const p = document.createElement('p'); p.className='muted-note'; p.textContent=text.noAmenities; amenities.append(p); }
     }
