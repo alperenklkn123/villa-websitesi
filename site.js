@@ -96,6 +96,8 @@
         const poolText = [pool.isSecluded ? termWords.secluded : '', Number.isFinite(pool.depthCm) ? termWords.depth + ': ' + pool.depthCm + ' cm' : ''].filter(Boolean).join(' · ');
         if(poolText)setText(document.querySelector('[data-pool-details]'), poolText);
       }
+      const capacityLabels={en:['bedrooms','guests'],tr:['yatak odası','misafir'],de:['Schlafzimmer','Gäste']}[language];
+      if(Number.isInteger(villa.bedrooms)&&Number.isInteger(villa.guests))setText(document.querySelector('[data-bed-capacity]'),villa.bedrooms+' '+capacityLabels[0]+' · '+villa.guests+' '+capacityLabels[1]);
       const beds = villa.bedConfiguration;
       if(beds && beds.bedroomOne && beds.bedroomTwo) {
         const doubleCount=beds.bedroomOne.doubleBeds || 0, singleCount=beds.bedroomTwo.singleBeds || 0;
