@@ -81,10 +81,49 @@
       });
       if (!photos.length) setText(gallery, text.noPhoto);
     }
+
+    // Listing-derived property details, translated and rendered from the same JSON source.
+    if (villa.id === 'glass-house') {
+      const termWords = {
+        en:{depth:'Depth',secluded:'Private, secluded',roomOne:'Bedroom 1',roomTwo:'Bedroom 2',double:'double bed',single:'single beds',floor:'first floor'},
+        tr:{depth:'Derinlik',secluded:'Özel ve korunaklı',roomOne:'1. oda',roomTwo:'2. oda',double:'çift kişilik yatak',single:'tek kişilik yatak',floor:'1. kat'},
+        de:{depth:'Tiefe',secluded:'Privat und geschützt',roomOne:'Schlafzimmer 1',roomTwo:'Schlafzimmer 2',double:'Doppelbett',single:'Einzelbetten',floor:'1. Etage'}
+      }[language];
+      const numberFormat = new Intl.NumberFormat(language === 'en' ? 'en-GB' : language === 'de' ? 'de-DE' : 'tr-TR', {maximumFractionDigits:1});
+      const pool = villa.pool;
+      if(pool && Number.isFinite(pool.lengthMeters) && Number.isFinite(pool.widthMeters)) {
+        setText(document.querySelector('[data-pool-size]'), numberFormat.format(pool.lengthMeters) + ' × ' + numberFormat.format(pool.widthMeters) + ' m');
+        const poolText = [pool.isSecluded ? termWords.secluded : '', Number.isFinite(pool.depthCm) ? termWords.depth + ': ' + pool.depthCm + ' cm' : ''].filter(Boolean).join(' · ');
+        if(poolText)setText(document.querySelector('[data-pool-details]'), poolText);
+      }
+      const beds = villa.bedConfiguration;
+      if(beds && beds.bedroomOne && beds.bedroomTwo) {
+        const doubleCount=beds.bedroomOne.doubleBeds || 0, singleCount=beds.bedroomTwo.singleBeds || 0;
+        const bedsText = termWords.roomOne+': '+doubleCount+' '+termWords.double+' · '+termWords.roomTwo+': '+singleCount+' '+termWords.single+' ('+termWords.floor+')';
+        setText(document.querySelector('[data-bed-layout]'), bedsText);
+      }
+      setText(document.querySelector('[data-check-in-after]'), villa.checkInAfter);
+      setText(document.querySelector('[data-check-out-before]'), villa.checkOutBefore);
+      setText(document.querySelector('[data-registration-number]'), villa.registrationNumber);
+      setText(document.querySelector('[data-family-note]'), lvalue(villa.familyNotes));
+      setText(document.querySelector('[data-arrival-note]'), lvalue(villa.arrivalNotes));
+      const renderSimpleList=(selector, values)=>{
+        const list=document.querySelector(selector);
+        if(!list || !Array.isArray(values))return;
+        list.replaceChildren();
+        values.filter(x=>typeof x==='string' && x.trim()).forEach(value=>{
+          const item=document.createElement('li');item.textContent=value;list.append(item);
+        });
+      };
+      renderSimpleList('[data-house-rules]', villa.houseRules?.[language]);
+      renderSimpleList('[data-included-services]', villa.includedServices?.[language]);
+      renderSimpleList('[data-excluded-services]', villa.excludedServices?.[language]);
+    }
+
     const amenities = document.getElementById('amenities');
     if (amenities) {
       amenities.replaceChildren();
-      (Array.isArray(villa.amenities) ? villa.amenities : []).forEach(a => {
+      (Array.isArray(villa.amenitiesByLanguage?.[language]) ? villa.amenitiesByLanguage[language] : (Array.isArray(villa.amenities) ? villa.amenities : [])).forEach(a => {
         if (typeof a !== 'string' || !a.trim()) return;
         const div = document.createElement('div'); div.className='amenity-item';
         const icon = document.createElement('span'); icon.textContent='✓'; icon.setAttribute('aria-hidden','true');
