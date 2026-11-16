@@ -68,6 +68,7 @@
     if (factsBar) factsBar.hidden = !validFacts.some(([,x]) => Number.isInteger(x) && x > 0);
     const gallery = document.getElementById('gallery');
     const photos = Array.isArray(villa.photos) ? villa.photos.filter(validURL) : [];
+    if (body.dataset.id === 'glass-house') setupHeroCarousel(villa, photos);
     if (gallery) {
       gallery.replaceChildren();
       photos.forEach((url, i) => {
@@ -117,6 +118,84 @@
     // Omit claims such as star ratings, license numbers, prices and availability if not confirmed.
     // VacationRental structured data is intentionally not published with sample photos and unknown property details.
   };
+
+  // Glass House: a compact, swipeable hero carousel instead of a long gallery below.
+  const setupHeroCarousel = (villa, photos) => {
+    const slider = document.querySelector('[data-slider]');
+    const track = slider?.querySelector('[data-slider-track]');
+    const controls = document.querySelector('[data-slider-controls]');
+    if (!slider || !track || !photos.length) return;
+    const initial = track.querySelector('.hero-slide');
+    track.replaceChildren();
+    const slides = photos.map((src, i) => {
+      const slide = i === 0 && initial ? initial : document.createElement('div');
+      slide.className = 'hero-slide';
+      const img = slide.querySelector('img') || document.createElement('img');
+      img.alt = photoAlt(villa, src);
+      img.decoding = 'async';
+      img.draggable = false;
+      img.loading = i === 0 ? 'eager' : 'lazy';
+      if (i === 0) {
+        img.src = photoURL(src);
+        img.fetchPriority = 'high';
+      } else {
+        img.removeAttribute('src');
+        img.dataset.src = photoURL(src);
+      }
+      if (!img.parentElement || img.parentElement !== slide) slide.append(img);
+      track.append(slide);
+      return img;
+    });
+    let active = 0;
+    const count = controls?.querySelector('[data-slider-count]');
+    const progress = controls?.querySelector('[data-slider-progress]');
+    const prev = controls?.querySelector('[data-slider-prev]');
+    const next = controls?.querySelector('[data-slider-next]');
+    const expand = controls?.querySelector('[data-slider-expand]');
+    const loadSlide = index => {
+      const img = slides[index];
+      if (img?.dataset.src) {
+        img.src = img.dataset.src;
+        delete img.dataset.src;
+      }
+    };
+    const goTo = index => {
+      active = (index + photos.length) % photos.length;
+      loadSlide(active);
+      loadSlide((active + 1) % photos.length);
+      loadSlide((active - 1 + photos.length) % photos.length);
+      track.style.transform = 'translate3d(-' + (active * 100) + '%,0,0)';
+      if (count) count.textContent = String(active + 1).padStart(2,'0') + ' / ' + String(photos.length).padStart(2,'0');
+      if (progress) progress.style.width = ((active + 1) / photos.length * 100) + '%';
+      if (prev) prev.disabled = photos.length <= 1;
+      if (next) next.disabled = photos.length <= 1;
+    };
+    controls.hidden = photos.length <= 1;
+    prev?.addEventListener('click', () => goTo(active - 1));
+    next?.addEventListener('click', () => goTo(active + 1));
+    expand?.addEventListener('click', () => showLightbox(photoURL(photos[active]), photoAlt(villa, photos[active]), expand));
+    slider.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(active + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    let start = null;
+    slider.addEventListener('pointerdown', event => {
+      if (event.button !== 0 && event.pointerType === 'mouse') return;
+      start = { x:event.clientX, y:event.clientY };
+    });
+    slider.addEventListener('pointerup', event => {
+      if (!start) return;
+      const dx = event.clientX - start.x;
+      const dy = event.clientY - start.y;
+      start = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.3) goTo(active + (dx < 0 ? 1 : -1));
+    });
+    slider.addEventListener('pointercancel', () => { start = null; });
+    goTo(0);
+  };
+
   let lightboxTrigger=null;
   function showLightbox(url, alt,trigger) {
     lightboxTrigger=trigger;
