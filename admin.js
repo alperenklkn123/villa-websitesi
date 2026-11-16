@@ -52,7 +52,7 @@
         f.control.addEventListener('input',()=>villa[key]=safeNumber(f.control.value));nums.append(f.el);
       }block.append(nums);
       const amenities=field('Doğrulanmış olanaklar (her satırda bir özellik)','textarea',(villa.amenities||[]).join('\n'));
-      amenities.control.rows=4;block.append(amenities.el);amenities.control.addEventListener('input',()=>villa.amenities=amenities.control.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean));
+      amenities.control.rows=4;block.append(amenities.el);amenities.control.addEventListener('input',()=>{villa.amenities=amenities.control.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(villa.amenitiesByLanguage)villa.amenitiesByLanguage.tr=[...villa.amenities];});
       const address=field('Adres / bölge bilgisi (kamusal olacak)','textarea',villa.address||'');address.control.rows=2;block.append(address.el);address.control.addEventListener('input',()=>villa.address=address.control.value);
       const distances=field('Mesafe bilgileri (her satır: Yer = Mesafe)','textarea',Object.entries(villa.distanceNotes||{}).map(([a,b])=>`${a} = ${b}`).join('\n'));
       distances.control.rows=3;block.append(distances.el);distances.control.addEventListener('input',()=>{
@@ -71,6 +71,54 @@
           if(key!=='priceNote')f.control.rows=key==='description'?4:2;
           block.append(f.el);f.control.addEventListener('input',()=>villa[key][lang]=f.control.value);
         }
+      }
+
+      if (villa.id === 'glass-house') {
+        const more=document.createElement('details');more.className='admin-property-extra';
+        const heading=document.createElement('summary');heading.textContent='Glass House · Havuz, yataklar, kurallar ve hizmetler';more.append(heading);
+        const description=document.createElement('p');description.className='admin-help';description.textContent='İlandan alınan bilgileri buradan düzenleyebilirsin. Üç dildeki metinler ayrı tutulur.';more.append(description);
+        if (!villa.pool)villa.pool={};
+        if (!villa.bedConfiguration)villa.bedConfiguration={floor:1,bedroomOne:{},bedroomTwo:{}};
+        const numericFields=[
+          ['Havuz boyu (metre)','lengthMeters','pool'],
+          ['Havuz eni (metre)','widthMeters','pool'],
+          ['Havuz derinliği (cm)','depthCm','pool'],
+          ['1. odada çift kişilik yatak','doubleBeds','bedroomOne'],
+          ['2. odada tek kişilik yatak','singleBeds','bedroomTwo']
+        ];
+        for (const [title,k,owner] of numericFields) {
+          const obj=owner==='pool'?villa.pool:villa.bedConfiguration[owner];
+          if (!obj)continue;
+          const f=field(title,'number',obj[k]??'');f.control.step=k==='depthCm'||k.endsWith('Beds')?'1':'0.1';f.control.min='0';
+          f.control.addEventListener('input',()=>{const n=Number(f.control.value);obj[k]=f.control.value.trim()===''?null:(Number.isFinite(n) && n>=0?n:null);});more.append(f.el);
+        }
+        for (const [label,key] of [['Giriş saati (sonrası)','checkInAfter'],['Çıkış saati (öncesi)','checkOutBefore']]) {
+          const f=field(label,'time',villa[key]||'');
+          f.control.addEventListener('input',()=>villa[key]=f.control.value);more.append(f.el);
+        }
+        const multilingualLists=[
+          ['amenitiesByLanguage','Olanaklar (bir satır = bir özellik)'],
+          ['houseRules','Ev kuralları'],
+          ['includedServices','Fiyata dahil olanlar'],
+          ['excludedServices','Ek ücrete tabi olanlar']
+        ];
+        for(const [lang,label] of [['tr','Türkçe'],['en','English'],['de','Deutsch']]){
+          const langHeader=document.createElement('h4');langHeader.className='admin-lang';langHeader.textContent=label;more.append(langHeader);
+          for(const [key,title] of multilingualLists){
+            if(lang==='tr' && key==='amenitiesByLanguage')continue; // Turkish list is editable above.
+            if(!villa[key])villa[key]={tr:[],en:[],de:[]};
+            const f=field(title,'textarea',(villa[key][lang]||[]).join('\n'));f.control.rows=3;more.append(f.el);
+            f.control.addEventListener('input',()=>{
+              villa[key][lang]=f.control.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+            });
+          }
+          for(const [key,title] of [['arrivalNotes','Giriş kimlik / varış notu'],['familyNotes','Çocuk ve bebek bilgisi']]){
+            if(!villa[key])villa[key]={tr:'',en:'',de:''};
+            const f=field(title,'textarea',villa[key][lang]||'');f.control.rows=2;more.append(f.el);
+            f.control.addEventListener('input',()=>villa[key][lang]=f.control.value);
+          }
+        }
+        block.append(more);
       }
       host.append(block);
     });
