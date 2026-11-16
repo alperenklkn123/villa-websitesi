@@ -289,3 +289,45 @@ body[data-id="glass-house-mini"].mini-teaser-only .detail-hero .hero-content h1{
     margin:6px 0 12px;
   }
 }
+
+
+/* GLASS HOUSE — editorial photo cards: verified villa photography in every stay-detail tile. */
+body[data-id="glass-house"] .property-fact--beds{
+  background:linear-gradient(115deg,rgba(18,29,29,.92) 0%,rgba(17,32,32,.73) 48%,rgba(14,30,30,.33) 100%),
+  url("assets/glass-house-real/double-bedroom.webp") center 48% / cover no-repeat;
+  border-color:#34433c;
+}
+body[data-id="glass-house"] .property-fact--times{
+  background:linear-gradient(115deg,rgba(6,32,48,.90) 0%,rgba(8,43,60,.72) 55%,rgba(5,42,57,.38) 100%),
+  url("assets/glass-house-real/pool.webp") center 52% / cover no-repeat;
+  border-color:#315165;
+}
+body[data-id="glass-house"] .property-fact--licence{
+  background:linear-gradient(115deg,rgba(26,36,34,.93) 0%,rgba(25,40,39,.77) 52%,rgba(16,35,34,.43) 100%),
+  url("assets/glass-house-real/aerial.webp") center 45% / cover no-repeat;
+  border-color:#46534c;
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence) .property-item-num{
+  color:#f4eee3;
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence) .property-fact-top svg{
+  color:#ebdec8;
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence) .property-fact-label{
+  color:#ead5b5;
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence) .property-fact-value,
+body[data-id="glass-house"] .property-fact--times .property-time strong{
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.16);
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence) .property-fact-sub{
+  color:#f1ede5;
+}
+body[data-id="glass-house"] .property-fact--times .property-time{
+  color:#f2efe9;
+  border-color:rgba(255,255,255,.32);
+}
+body[data-id="glass-house"] .property-fact:is(.property-fact--beds,.property-fact--times,.property-fact--licence):hover{
+  border-color:#c6b294;
+}
