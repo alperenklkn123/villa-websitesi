@@ -36,29 +36,48 @@
       ],
       "photosAreSamples": false,
       "summary": {
-        "en": "An independent villa stay in Kalkan, on the Turkish Mediterranean coast.",
-        "de": "Ein privater Villenaufenthalt in Kalkan an der türkischen Mittelmeerküste.",
-        "tr": "Türkiye’nin Akdeniz kıyısındaki Kalkan’da özel bir villa konaklaması."
+        "tr": "Kalkan Yeşilköy'de özel ve korunaklı havuzlu, jakuzili, 4 kişilik Villa Glass House. 2 yatak odası, 2 banyo, bahçe ve aile dostu eğlence alanları.",
+        "en": "Villa Glass House is a private Kalkan–Yeşilköy retreat for up to four guests, with two bedrooms, two bathrooms, a secluded pool, Jacuzzi and family-friendly outdoor spaces.",
+        "de": "Die Villa Glass House in Kalkan–Yeşilköy bietet Platz für vier Gäste: zwei Schlafzimmer, zwei Bäder, einen privaten, geschützten Pool, einen Whirlpool und einen Garten."
       },
       "description": {
-        "en": "Discover Villa Glass House in Kalkan. Explore the property gallery, review the information about the stay, and contact the host directly to discuss travel dates and current rates. The gallery shows original photographs of Villa Glass House. Property specifications will be added after verification.",
-        "de": "Entdecken Sie die Villa Glass House in Kalkan. Sehen Sie sich die Galerie an und kontaktieren Sie den Gastgeber direkt, um Reisedaten und aktuelle Preise zu besprechen. Die Galerie zeigt Originalfotos der Villa Glass House. Bestätigte Ausstattungsdetails werden ergänzt.",
-        "tr": "Kalkan’daki Villa Glass House’u keşfedin. Galeriyi inceleyin, konaklama bilgilerine göz atın ve tarih ile güncel fiyatlar için ev sahibiyle doğrudan iletişime geçin. Galeride Villa Glass House’un gerçek fotoğrafları yer almaktadır. Doğrulanmış özellikler eklenecektir."
+        "tr": "Villa Glass House, Antalya'nın Kaş ilçesine bağlı Kalkan Yeşilköy bölgesinde yer alır. En fazla dört misafir için planlanan villada iki yatak odası ve iki banyo bulunur. Üst kattaki odalardan birinde çift kişilik yatak, diğerinde iki tek kişilik yatak vardır. Doğa manzaralı dış alanda 10,5 × 3,5 metre ölçülerinde, 150 cm derinliğinde özel ve korunaklı havuz; çocuk oyun alanı, salıncak, langırt, masa tenisi ve barbekü yer alır. Jakuzi, Wi-Fi ve günlük konaklamayı kolaylaştıran ev donanımları mevcuttur. Güncel konaklama fiyatı ve rezervasyon koşulları için doğrudan bizimle iletişime geçebilirsiniz.",
+        "en": "Located in Yeşilköy near Kalkan, Villa Glass House accommodates up to four guests in two bedrooms with two bathrooms. One upstairs bedroom has a double bed and the other has two single beds. Outside, the private, secluded 10.5 × 3.5-metre pool is 150 cm deep, with nature views, a children's play area, a swing, table football, table tennis and a barbecue. A Jacuzzi, Wi-Fi and practical household appliances complete the stay. Please contact us directly to confirm current rates and booking conditions.",
+        "de": "Die Villa Glass House liegt in Yeşilköy bei Kalkan und bietet Platz für bis zu vier Gäste in zwei Schlafzimmern mit zwei Bädern. Im Obergeschoss befindet sich ein Schlafzimmer mit Doppelbett und eines mit zwei Einzelbetten. Der private, geschützte Pool ist 10,5 × 3,5 Meter groß und 150 cm tief. Hinzu kommen Naturblick, Kinderspielbereich, Schaukel, Tischfußball, Tischtennis und Grill. Ein Whirlpool, WLAN und eine gut ausgestattete Küche sorgen für zusätzlichen Komfort. Aktuelle Preise und Buchungsbedingungen erhalten Sie auf Anfrage."
       },
-      "guests": null,
-      "bedrooms": null,
-      "bathrooms": null,
-      "amenities": [],
+      "guests": 4,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "amenities": [
+        "Özel ve korunaklı yüzme havuzu",
+        "Jakuzi",
+        "Çocuk oyun alanı",
+        "Barbekü",
+        "Doğa manzarası",
+        "Langırt",
+        "Masa tenisi",
+        "Salıncak",
+        "Saç kurutma makinesi",
+        "Bulaşık makinesi",
+        "Çamaşır makinesi",
+        "Buzdolabı",
+        "Klima",
+        "Wi-Fi / internet",
+        "Tost makinesi",
+        "Su ısıtıcısı (kettle)",
+        "Ütü",
+        "Havuz ve bahçe bakımı"
+      ],
       "distanceNotes": {},
       "priceNote": {
-        "en": "Ask for current rates.",
-        "de": "Aktuelle Preise auf Anfrage.",
-        "tr": "Güncel fiyat için iletişime geçin."
+        "tr": "İlan referansında gecelik 6.000 TL'den başlayan fiyat belirtilmiştir. Bu tutar güncel teklif değildir; kesin fiyatı bize sorabilirsiniz.",
+        "en": "The reference listing advertised rates from TRY 6,000 per night. This is not a current quote; please contact us for confirmed pricing.",
+        "de": "Die Referenzanzeige nennt Preise ab 6.000 TRY pro Nacht. Dies ist kein aktuelles Angebot; bitte fragen Sie den bestätigten Preis bei uns an."
       },
       "latitude": null,
       "longitude": null,
-      "address": "",
-      "registrationNumber": "",
+      "address": "Yeşilköy, Kalkan, Kaş, Antalya, Türkiye",
+      "registrationNumber": "07-11288",
       "photoDetails": {
         "assets/glass-house-real/pool-villa.webp": {
           "src": "assets/glass-house-real/pool-villa.webp",
@@ -362,7 +381,171 @@
         }
       },
       "cover": "assets/glass-house-real/cover-960.webp",
-      "coverSmall": "assets/glass-house-real/cover-480.webp"
+      "coverSmall": "assets/glass-house-real/cover-480.webp",
+      "pool": {
+        "lengthMeters": 10.5,
+        "widthMeters": 3.5,
+        "depthCm": 150,
+        "isPrivate": true,
+        "isSecluded": true
+      },
+      "bedConfiguration": {
+        "floor": 1,
+        "bedroomOne": {
+          "doubleBeds": 1,
+          "singleBeds": 0
+        },
+        "bedroomTwo": {
+          "doubleBeds": 0,
+          "singleBeds": 2
+        }
+      },
+      "checkInAfter": "16:00",
+      "checkOutBefore": "10:00",
+      "familyNotes": {
+        "tr": "Çocuklar (2–12 yaş) ve bebekler (0–2 yaş) için uygundur.",
+        "en": "Suitable for children aged 2–12 and infants aged 0–2.",
+        "de": "Geeignet für Kinder (2–12 Jahre) und Babys (0–2 Jahre)."
+      },
+      "arrivalNotes": {
+        "tr": "Girişte fotoğraflı kimlik belgesi istenir. Tahmini varış saatinizi önceden bildirmeniz gerekir.",
+        "en": "Guests must present photo identification at check-in and notify the host of their expected arrival time in advance.",
+        "de": "Beim Check-in ist ein Lichtbildausweis vorzulegen. Bitte teilen Sie Ihre voraussichtliche Ankunftszeit vorab mit."
+      },
+      "amenitiesByLanguage": {
+        "tr": [
+          "Özel ve korunaklı yüzme havuzu",
+          "Jakuzi",
+          "Çocuk oyun alanı",
+          "Barbekü",
+          "Doğa manzarası",
+          "Langırt",
+          "Masa tenisi",
+          "Salıncak",
+          "Saç kurutma makinesi",
+          "Bulaşık makinesi",
+          "Çamaşır makinesi",
+          "Buzdolabı",
+          "Klima",
+          "Wi-Fi / internet",
+          "Tost makinesi",
+          "Su ısıtıcısı (kettle)",
+          "Ütü",
+          "Havuz ve bahçe bakımı"
+        ],
+        "en": [
+          "Private, secluded swimming pool",
+          "Jacuzzi",
+          "Children's play area",
+          "Barbecue",
+          "Nature views",
+          "Table football",
+          "Table tennis",
+          "Swing",
+          "Hairdryer",
+          "Dishwasher",
+          "Washing machine",
+          "Refrigerator",
+          "Air conditioning",
+          "Wi-Fi / internet",
+          "Sandwich toaster",
+          "Electric kettle",
+          "Iron",
+          "Pool and garden maintenance"
+        ],
+        "de": [
+          "Privater, geschützter Pool",
+          "Whirlpool",
+          "Kinderspielbereich",
+          "Grill",
+          "Naturblick",
+          "Tischfußball",
+          "Tischtennis",
+          "Schaukel",
+          "Haartrockner",
+          "Geschirrspüler",
+          "Waschmaschine",
+          "Kühlschrank",
+          "Klimaanlage",
+          "WLAN / Internet",
+          "Sandwich-Toaster",
+          "Wasserkocher",
+          "Bügeleisen",
+          "Pool- und Gartenpflege"
+        ]
+      },
+      "houseRules": {
+        "tr": [
+          "Innen mekanlarda sigara içilmez.",
+          "Evcil hayvan kabul edilmez.",
+          "Parti ve toplu etkinlik düzenlenemez.",
+          "Kayıt dışı ek misafir kabul edilmez."
+        ],
+        "en": [
+          "No smoking indoors.",
+          "Pets are not permitted.",
+          "Parties and group events are not permitted.",
+          "Unregistered extra guests are not permitted."
+        ],
+        "de": [
+          "Rauchen in Innenräumen ist nicht gestattet.",
+          "Haustiere sind nicht erlaubt.",
+          "Partys und Gruppenveranstaltungen sind nicht gestattet.",
+          "Nicht angemeldete zusätzliche Gäste sind nicht erlaubt."
+        ]
+      },
+      "includedServices": {
+        "tr": [
+          "Giriş temizliği",
+          "Havuz ve bahçe bakımı",
+          "İnternet",
+          "Su kullanımı",
+          "Elektrik kullanımı",
+          "Tüpgaz"
+        ],
+        "en": [
+          "Cleaning before arrival",
+          "Pool and garden maintenance",
+          "Internet",
+          "Water use",
+          "Electricity use",
+          "Bottled gas"
+        ],
+        "de": [
+          "Reinigung vor Anreise",
+          "Pool- und Gartenpflege",
+          "Internet",
+          "Wasserverbrauch",
+          "Stromverbrauch",
+          "Gasflasche"
+        ]
+      },
+      "excludedServices": {
+        "tr": [
+          "Ekstra yatak",
+          "Ekstra temizlik",
+          "Mama sandalyesi",
+          "Ulaşım hizmeti"
+        ],
+        "en": [
+          "Additional bed",
+          "Extra cleaning",
+          "High chair",
+          "Transport services"
+        ],
+        "de": [
+          "Zusatzbett",
+          "Zusätzliche Reinigung",
+          "Kinderhochstuhl",
+          "Transferservice"
+        ]
+      },
+      "sourceReference": {
+        "url": "https://www.villaciniz.com.tr/kiralik-villalar/villa-glass-house",
+        "checkedOn": "2026-11-16",
+        "referenceStartingPriceTRY": 6000,
+        "notice": "Reference listing only; agency terms, discounts and availability have not been adopted."
+      }
     },
     {
       "id": "glass-house-mini",
