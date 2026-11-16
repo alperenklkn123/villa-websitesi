@@ -77,3 +77,11 @@ body[data-id="glass-house"] .terms-section{padding-top:50px;padding-bottom:90px;
 @media(max-width:1060px){.property-facts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.terms-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.terms-card:last-child{grid-column:1/-1;min-height:0}}
 @media(max-width:700px){body[data-id="glass-house"] .property-overview{padding-top:25px;padding-bottom:35px}.property-facts-grid{gap:10px}.property-fact{padding:23px 18px;min-height:185px}.property-fact-label{font-size:9px}.property-fact-value{font-size:29px}.property-fact-sub{font-size:11px}.property-family-note{flex-wrap:wrap;font-size:12px}.terms-cards{grid-template-columns:1fr}.terms-card,.terms-card:last-child{min-height:0;grid-column:auto;padding:25px 23px}body[data-id="glass-house"] .amenities{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:15px}body[data-id="glass-house"] .terms-section{padding-top:40px;padding-bottom:65px}}
 @media(max-width:420px){.property-facts-grid{grid-template-columns:1fr}.property-fact{min-height:0}.property-fact-value{font-size:34px}body[data-id="glass-house"] .amenities{grid-template-columns:1fr}}
+
+
+/* Optional detailed editor, collapsed to keep the admin interface compact. */
+.admin-property-extra{margin:28px 0 5px;padding:20px 20px 24px;border:1px solid #d9cfc0;background:#f5f0e8}
+.admin-property-extra summary{font-size:14px;font-weight:600;cursor:pointer;list-style-position:outside;line-height:1.65}
+.admin-property-extra[open] summary{margin-bottom:18px}
+.admin-property-extra .admin-lang{font-size:23px;margin-top:28px}
+.admin-property-extra label{margin:14px 0}
